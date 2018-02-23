@@ -9,16 +9,26 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from './../environments/environment';
+
+import { Routes, RouterModule } from '@angular/router';
+
+
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { PaintingsComponent } from './pages/paintings/paintings.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent,
+    PaintingsComponent
   ],
   imports: [
     BrowserModule,
