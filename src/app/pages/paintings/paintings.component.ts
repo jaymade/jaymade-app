@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-paintings',
@@ -7,9 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaintingsComponent implements OnInit {
 
-  constructor() { }
 
+  paintingObservable: Observable<any[]>;
+
+  constructor(private db: AngularFireDatabase) { }
   ngOnInit() {
+    this.paintingObservable = this.getPainting('/painting');
   }
 
+  getPainting(listPath): Observable<any[]> {
+    return this.db.list(listPath).valueChanges();
+  }
 }
