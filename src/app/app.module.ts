@@ -15,27 +15,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-import { PaintingsComponent } from './pages/paintings/paintings.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'paintings',
-    component: PaintingsComponent
-  }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
     FooterComponent,
-    PaintingsComponent
   ],
   imports: [
     BrowserModule,
